@@ -25,7 +25,7 @@ class VideoSprite extends FlxSpriteGroup {
 	public function new(videoName:String, isWaiting:Bool, canSkip:Bool = false, shouldLoop:Dynamic = false, autoPause = true) {
 		super();
 
-		FlxG.autoPuase = autoPause;
+		FlxG.autoPause = autoPause;
 		this.videoName = videoName;
 		scrollFactor.set();
 		cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
@@ -76,7 +76,7 @@ class VideoSprite extends FlxSpriteGroup {
 			return;
 
 		trace('Video destroyed');
-		FlxG.autoPuase = ClientPrefs.data.autoPause;
+		FlxG.autoPause = ClientPrefs.data.autoPause;
 		if(cover != null)
 		{
 			remove(cover);
